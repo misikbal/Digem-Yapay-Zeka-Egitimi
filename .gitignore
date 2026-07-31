@@ -1,2 +1,23 @@
+# Sanal ortam
 .venv/
+venv/
+env/
+
+# Python önbellek dosyaları
 __pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# IDE / editör
+.vscode/
+.idea/
+*.swp
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+
+# Ortam değişkenleri (şifre, token vb.)
+.env
+.env.local

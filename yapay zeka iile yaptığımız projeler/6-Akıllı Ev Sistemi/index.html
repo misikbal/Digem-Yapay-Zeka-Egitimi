@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akıllı Ev Sistemi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header__brand">
+        <span class="header__icon" aria-hidden="true">🏠</span>
+        <div>
+          <h1>Akıllı Ev Sistemi</h1>
+          <p class="header__subtitle">Otomasyon kontrol paneli</p>
+        </div>
+      </div>
+      <div class="header__meta">
+        <span class="badge badge--online">● Sistem Aktif</span>
+        <time id="clock">--:--</time>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="status-panel" id="status-panel" aria-live="polite">
+        <div class="status-panel__icon" id="status-icon" aria-hidden="true">✓</div>
+        <div class="status-panel__content">
+          <h2>Sistem Durumu</h2>
+          <p id="status-message">Konfor mod çalıştırıldı (Klima ve Kombi Açık Değil)</p>
+        </div>
+      </section>
+
+      <section class="controls">
+        <article class="card card--alarm" id="alarm-card">
+          <div class="card__header">
+            <span class="card__emoji" aria-hidden="true">🔥</span>
+            <h3>Yangın Alarmı</h3>
+          </div>
+          <p class="card__desc">Alarm aktif olduğunda fıskiyeler devreye girer ve itfaiye bilgilendirilir.</p>
+          <label class="toggle">
+            <input type="checkbox" id="yangin-alarmi">
+            <span class="toggle__track"></span>
+            <span class="toggle__label">Alarm Kapalı</span>
+          </label>
+        </article>
+
+        <article class="card card--occupancy">
+          <div class="card__header">
+            <span class="card__emoji" aria-hidden="true">👤</span>
+            <h3>Evde Kimse Var mı?</h3>
+          </div>
+          <p class="card__desc">Ev boşken enerji tasarrufu için eko mod devreye girer.</p>
+          <label class="toggle">
+            <input type="checkbox" id="evde-insan" checked>
+            <span class="toggle__track"></span>
+            <span class="toggle__label">Evde İnsan Var</span>
+          </label>
+        </article>
+
+        <article class="card card--temperature">
+          <div class="card__header">
+            <span class="card__emoji" aria-hidden="true">🌡️</span>
+            <h3>Oda Sıcaklığı</h3>
+          </div>
+          <div class="temp-display">
+            <span class="temp-display__value" id="temp-value">35</span>
+            <span class="temp-display__unit">°C</span>
+          </div>
+          <div class="temp-gauge">
+            <div class="temp-gauge__fill" id="temp-gauge-fill"></div>
+          </div>
+          <input
+            type="range"
+            id="oda-sicakligi"
+            class="temp-slider"
+            min="10"
+            max="45"
+            value="35"
+            aria-label="Oda sıcaklığı ayarı"
+          >
+          <div class="temp-labels">
+            <span>10°C</span>
+            <span class="temp-labels__comfort">Konfor: 18–25°C</span>
+            <span>45°C</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="devices">
+        <h2 class="devices__title">Cihaz Durumları</h2>
+        <div class="devices__grid">
+          <div class="device" id="device-klima" data-active="false">
+            <span class="device__icon" aria-hidden="true">❄️</span>
+            <span class="device__name">Klima</span>
+            <span class="device__state">Kapalı</span>
+          </div>
+          <div class="device" id="device-kombi" data-active="false">
+            <span class="device__icon" aria-hidden="true">♨️</span>
+            <span class="device__name">Kombi</span>
+            <span class="device__state">Kapalı</span>
+          </div>
+          <div class="device" id="device-fiskiye" data-active="false">
+            <span class="device__icon" aria-hidden="true">💧</span>
+            <span class="device__name">Fıskiyeler</span>
+            <span class="device__state">Kapalı</span>
+          </div>
+          <div class="device" id="device-eko" data-active="false">
+            <span class="device__icon" aria-hidden="true">🌿</span>
+            <span class="device__name">Eko Mod</span>
+            <span class="device__state">Kapalı</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Yapay Zeka Eğitimi — Akıllı Ev Sistemi Projesi</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

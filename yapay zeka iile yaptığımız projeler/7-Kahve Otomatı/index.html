@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kahve Otomatı</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="scene">
+    <div class="machine" id="machine">
+      <!-- Üst panel -->
+      <div class="machine__top">
+        <div class="machine__logo">
+          <span class="machine__logo-icon" aria-hidden="true">☕</span>
+          <div>
+            <h1>Kahve Otomatı</h1>
+            <p>Otomatımıza Hoşgeldiniz</p>
+          </div>
+        </div>
+        <span class="machine__power" aria-hidden="true">
+          <span class="machine__power-dot"></span>
+          Açık
+        </span>
+      </div>
+
+      <!-- LCD ekran -->
+      <div class="lcd" id="lcd" aria-live="polite">
+        <div class="lcd__scanlines" aria-hidden="true"></div>
+        <p class="lcd__line lcd__line--title" id="lcd-title">Hoş Geldiniz</p>
+        <p class="lcd__line" id="lcd-message">Lütfen bir içecek seçiniz</p>
+        <p class="lcd__line lcd__line--sub" id="lcd-sub"></p>
+      </div>
+
+      <!-- İçecek vitrini (2×2) -->
+      <div class="showcase">
+        <h2 class="showcase__title">İçecekler</h2>
+        <div class="showcase__grid">
+          <article class="drink" data-id="1" data-name="Ekspreso" data-price="40">
+            <span class="drink__num">1</span>
+            <span class="drink__icon" aria-hidden="true">☕</span>
+            <span class="drink__name">Ekspreso</span>
+            <span class="drink__price">40 TL</span>
+          </article>
+          <article class="drink" data-id="2" data-name="Latte" data-price="50">
+            <span class="drink__num">2</span>
+            <span class="drink__icon" aria-hidden="true">🥛</span>
+            <span class="drink__name">Latte</span>
+            <span class="drink__price">50 TL</span>
+          </article>
+          <article class="drink" data-id="3" data-name="Mocha" data-price="60">
+            <span class="drink__num">3</span>
+            <span class="drink__icon" aria-hidden="true">🍫</span>
+            <span class="drink__name">Mocha</span>
+            <span class="drink__price">60 TL</span>
+          </article>
+          <article class="drink" data-id="4" data-name="Çay" data-price="10">
+            <span class="drink__num">4</span>
+            <span class="drink__icon" aria-hidden="true">🍵</span>
+            <span class="drink__name">Çay</span>
+            <span class="drink__price">10 TL</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- Tuş takımı -->
+      <div class="keypad">
+        <div class="keypad__section">
+          <p class="keypad__label">Seçim Tuşları</p>
+          <div class="keypad__row">
+            <button type="button" class="key key--select" data-select="1">1</button>
+            <button type="button" class="key key--select" data-select="2">2</button>
+            <button type="button" class="key key--select" data-select="3">3</button>
+            <button type="button" class="key key--select" data-select="4">4</button>
+          </div>
+        </div>
+
+        <div class="keypad__section keypad__section--payment" id="payment-section" hidden>
+          <p class="keypad__label">Para Yükle (TL)</p>
+          <div class="keypad__row">
+            <button type="button" class="key key--money" data-money="10">10</button>
+            <button type="button" class="key key--money" data-money="20">20</button>
+            <button type="button" class="key key--money" data-money="50">50</button>
+            <button type="button" class="key key--money" data-money="100">100</button>
+          </div>
+          <div class="payment-bar">
+            <span class="payment-bar__label">Yüklenen:</span>
+            <span class="payment-bar__value" id="inserted-amount">0 TL</span>
+          </div>
+          <button type="button" class="key key--confirm" id="btn-confirm">Ödemeyi Onayla</button>
+        </div>
+
+        <button type="button" class="key key--cancel" id="btn-cancel">İptal</button>
+      </div>
+
+      <!-- Dağıtım yuvası -->
+      <div class="dispenser">
+        <div class="dispenser__slot" id="dispenser-slot">
+          <div class="dispenser__cup" id="dispenser-cup" hidden aria-hidden="true">☕</div>
+        </div>
+        <p class="dispenser__hint">İçecek buradan alınır</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Yapay Zeka Eğitimi — Kahve Otomatı Projesi</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

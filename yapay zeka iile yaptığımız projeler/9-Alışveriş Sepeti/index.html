@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sepet — Alışveriş Otomasyonu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grid"></div>
+    <div class="bg__blob bg__blob--1"></div>
+    <div class="bg__blob bg__blob--2"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="topbar__mark" aria-hidden="true"></span>
+      <div>
+        <p class="topbar__name">Sepet</p>
+        <p class="topbar__tag">Alışveriş Otomasyonu</p>
+      </div>
+    </div>
+    <button type="button" class="cart-toggle" id="cart-toggle" aria-label="Sepeti aç">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M6 6h15l-1.5 9h-12z"/>
+        <path d="M6 6L5 3H2"/>
+        <circle cx="9" cy="20" r="1.5"/>
+        <circle cx="18" cy="20" r="1.5"/>
+      </svg>
+      <span class="cart-toggle__count" id="cart-badge">2</span>
+    </button>
+  </header>
+
+  <main class="layout">
+    <section class="catalog">
+      <header class="section-head">
+        <h1 class="section-head__title">Ürünler</h1>
+        <p class="section-head__desc">Kataloğdan seç veya kendi ürününü ekle. 1000 TL üzeri kargo ücretsiz.</p>
+      </header>
+
+      <div class="products" id="products" role="list"></div>
+
+      <form class="add-form" id="add-form" autocomplete="off">
+        <label class="add-form__label" for="yeni-urun">Sepete eklemek istediğiniz ürün</label>
+        <div class="add-form__row add-form__row--stack">
+          <input
+            type="text"
+            id="yeni-urun"
+            name="yeni-urun"
+            class="add-form__input"
+            placeholder="Örn: Mouse, Şarj Aleti…"
+            required
+            maxlength="40"
+          >
+          <input
+            type="number"
+            id="yeni-fiyat"
+            name="yeni-fiyat"
+            class="add-form__input add-form__input--price"
+            placeholder="Fiyat (TL)"
+            required
+            min="1"
+            step="1"
+          >
+          <button type="submit" class="btn btn--primary">Ekle</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title">
+      <div class="cart-panel__inner">
+        <header class="cart-panel__head">
+          <div>
+            <h2 id="cart-title" class="cart-panel__title">Sepetiniz</h2>
+            <p class="cart-panel__meta">
+              <span id="cart-count">2</span> ürün
+            </p>
+          </div>
+          <button type="button" class="cart-panel__close" id="cart-close" aria-label="Sepeti kapat">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+          </button>
+        </header>
+
+        <ul class="cart-list" id="cart-list" aria-live="polite"></ul>
+
+        <div class="cart-empty" id="cart-empty" hidden>
+          <p>Sepetiniz boş.</p>
+          <p class="cart-empty__hint">Ürün ekleyerek başlayın.</p>
+        </div>
+
+        <form class="remove-form" id="remove-form" autocomplete="off">
+          <label class="remove-form__label" for="silinecek-urun">Silmek istediğiniz ürün</label>
+          <div class="remove-form__row">
+            <input
+              type="text"
+              id="silinecek-urun"
+              name="silinecek-urun"
+              class="remove-form__input"
+              placeholder="Ürün adını yazın"
+              required
+              maxlength="40"
+            >
+            <button type="submit" class="btn btn--danger">Sil</button>
+          </div>
+        </form>
+
+        <div class="cart-totals" id="cart-totals">
+          <div class="cart-totals__row">
+            <span>Ara toplam</span>
+            <span id="ara-toplam">0 TL</span>
+          </div>
+          <div class="cart-totals__row" id="kargo-row">
+            <span>Kargo</span>
+            <span id="kargo-ucreti">99 TL</span>
+          </div>
+          <p class="cart-totals__hint" id="kargo-hint">1000 TL’ye 0 TL kaldı — kargo ücretsiz olsun.</p>
+          <div class="cart-totals__row cart-totals__row--total">
+            <span>Genel toplam</span>
+            <span id="genel-toplam">0 TL</span>
+          </div>
+        </div>
+
+        <p class="cart-panel__footer" id="cart-summary">Mevcut sepetiniz hazır.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <footer class="site-footer">
+    <p>Yapay Zeka Eğitimi — Alışveriş Sepeti Projesi</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
