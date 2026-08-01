@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ziraat İnternet Bankacılığı</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- GİRİŞ EKRANI -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-hero" aria-hidden="true">
+      <div class="login-hero__overlay"></div>
+      <div class="login-hero__pattern"></div>
+      <div class="login-hero__content">
+        <div class="brand brand--hero">
+          <svg class="brand__emblem" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="wheatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF4D4D"/>
+                <stop offset="50%" stop-color="#E30613"/>
+                <stop offset="100%" stop-color="#A8000B"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#wheatGrad)" d="M32 4c2 6 6 10 10 12-4 1-8 4-10 8-2-4-6-7-10-8 4-2 8-6 10-12zm0 16c3 5 8 8 13 9-5 2-10 6-13 12-3-6-8-10-13-12 5-1 10-4 13-9zm0 18c2 4 6 7 10 8-4 1-7 4-10 8-3-4-6-7-10-8 4-1 8-4 10-8z"/>
+          </svg>
+          <div>
+            <p class="brand__name">Ziraat</p>
+            <p class="brand__sub">Bankası</p>
+          </div>
+        </div>
+        <h1 class="login-hero__title">Güvenli ve kolay<br>dijital bankacılık</h1>
+        <p class="login-hero__text">Hesaplarınızı yönetin, havale yapın, para çekin ve yatırın — hepsi tek ekranda.</p>
+      </div>
+    </div>
+
+    <div class="login-panel">
+      <div class="login-panel__inner">
+        <p class="login-panel__eyebrow">İnternet Bankacılığı</p>
+        <h2 class="login-panel__title">Giriş Yap</h2>
+        <p class="login-panel__hint">Demo: <strong>ahmet</strong> / <strong>1234</strong></p>
+
+        <form id="login-form" class="login-form" autocomplete="off">
+          <label class="field">
+            <span class="field__label">Kullanıcı Adı / Müşteri No</span>
+            <input type="text" id="login-user" class="field__input" placeholder="Kullanıcı adınız" required>
+          </label>
+          <label class="field">
+            <span class="field__label">Şifre / PIN</span>
+            <div class="field__password">
+              <input type="password" id="login-pin" class="field__input" placeholder="••••" maxlength="6" required>
+              <button type="button" class="field__toggle" id="toggle-pin" aria-label="Şifreyi göster">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </label>
+          <p id="login-error" class="form-error" hidden></p>
+          <button type="submit" class="btn btn--primary btn--full">Giriş Yap</button>
+        </form>
+
+        <div class="demo-accounts">
+          <p class="demo-accounts__title">Demo Hesaplar</p>
+          <div class="demo-accounts__list">
+            <button type="button" class="demo-chip" data-user="ahmet" data-pin="1234">Ahmet Yılmaz</button>
+            <button type="button" class="demo-chip" data-user="ayşe" data-pin="1234">Ayşe Çınar</button>
+            <button type="button" class="demo-chip" data-user="mehmet" data-pin="1234">Mehmet Yılmaz</button>
+          </div>
+        </div>
+      </div>
+      <footer class="login-footer">
+        <span>© 2026 Ziraat Bankası — Eğitim Demo</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- BANKACILIK UYGULAMASI -->
+  <div id="app-screen" class="app" hidden>
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <svg class="brand__emblem brand__emblem--sm" viewBox="0 0 64 64" aria-hidden="true">
+          <path fill="#E30613" d="M32 4c2 6 6 10 10 12-4 1-8 4-10 8-2-4-6-7-10-8 4-2 8-6 10-12zm0 16c3 5 8 8 13 9-5 2-10 6-13 12-3-6-8-10-13-12 5-1 10-4 13-9zm0 18c2 4 6 7 10 8-4 1-7 4-10 8-3-4-6-7-10-8 4-1 8-4 10-8z"/>
+        </svg>
+        <div>
+          <p class="sidebar__name">Ziraat</p>
+          <p class="sidebar__tag">İnternet Şubesi</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Ana menü">
+        <button type="button" class="nav__item is-active" data-view="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Ana Sayfa
+        </button>
+        <button type="button" class="nav__item" data-view="accounts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          Hesaplarım
+        </button>
+        <button type="button" class="nav__item" data-view="havale">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l-4-5 4-5"/><path d="M3 12h13"/><path d="M17 7l4 5-4 5"/><path d="M21 12H13"/></svg>
+          Havale
+        </button>
+        <button type="button" class="nav__item" data-view="transfer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-9 9"/><path d="M3 21l9-9"/></svg>
+          Hesaplar Arası
+        </button>
+        <button type="button" class="nav__item" data-view="withdraw">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/></svg>
+          Para Çek
+        </button>
+        <button type="button" class="nav__item" data-view="deposit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+          Para Yatır
+        </button>
+        <button type="button" class="nav__item" data-view="history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          İşlem Geçmişi
+        </button>
+      </nav>
+
+      <button type="button" class="sidebar__logout" id="logout-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Güvenli Çıkış
+      </button>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="topbar__greeting">
+          <p class="topbar__hello" id="greeting-text">Hoş geldiniz</p>
+          <p class="topbar__date" id="today-date"></p>
+        </div>
+        <div class="topbar__user">
+          <div class="avatar" id="user-avatar">A</div>
+          <div class="topbar__user-info">
+            <p class="topbar__user-name" id="user-name">—</p>
+            <p class="topbar__user-id" id="user-id">—</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- ANA SAYFA -->
+        <section id="view-dashboard" class="view is-visible">
+          <div class="balance-hero">
+            <div class="balance-hero__info">
+              <p class="balance-hero__label">Toplam Bakiye</p>
+              <p class="balance-hero__amount" id="total-balance">0,00 ₺</p>
+              <p class="balance-hero__sub" id="account-count">2 hesap</p>
+            </div>
+            <div class="balance-hero__actions">
+              <button type="button" class="btn btn--light" data-goto="havale">Havale Yap</button>
+              <button type="button" class="btn btn--ghost-light" data-goto="withdraw">Para Çek</button>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <button type="button" class="quick-card" data-goto="havale">
+              <span class="quick-card__icon quick-card__icon--red">↗</span>
+              <span class="quick-card__title">Havale</span>
+              <span class="quick-card__desc">Başka hesaba gönder</span>
+            </button>
+            <button type="button" class="quick-card" data-goto="transfer">
+              <span class="quick-card__icon quick-card__icon--dark">⇄</span>
+              <span class="quick-card__title">Hesaplar Arası</span>
+              <span class="quick-card__desc">Kendi hesaplarınız arası</span>
+            </button>
+            <button type="button" class="quick-card" data-goto="deposit">
+              <span class="quick-card__icon quick-card__icon--green">↓</span>
+              <span class="quick-card__title">Para Yatır</span>
+              <span class="quick-card__desc">Hesabınıza yükleyin</span>
+            </button>
+            <button type="button" class="quick-card" data-goto="history">
+              <span class="quick-card__icon quick-card__icon--gray">◷</span>
+              <span class="quick-card__title">Hareketler</span>
+              <span class="quick-card__desc">Son işlemleriniz</span>
+            </button>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <h3>Hesaplarım</h3>
+              <button type="button" class="link-btn" data-goto="accounts">Tümü</button>
+            </div>
+            <div id="dashboard-accounts" class="account-list"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <h3>Son İşlemler</h3>
+              <button type="button" class="link-btn" data-goto="history">Tümü</button>
+            </div>
+            <div id="dashboard-history" class="tx-list"></div>
+          </div>
+        </section>
+
+        <!-- HESAPLARIM -->
+        <section id="view-accounts" class="view">
+          <header class="view-head">
+            <h2>Hesaplarım</h2>
+            <p>Tüm hesap bakiyelerinizi görüntüleyin</p>
+          </header>
+          <div id="accounts-full" class="accounts-grid"></div>
+        </section>
+
+        <!-- HAVALE -->
+        <section id="view-havale" class="view">
+          <header class="view-head">
+            <h2>Havale / EFT</h2>
+            <p>Başka bir Ziraat müşterisine para gönderin</p>
+          </header>
+          <form id="havale-form" class="tx-form">
+            <div class="tx-form__card">
+              <label class="field">
+                <span class="field__label">Gönderen Hesap</span>
+                <select id="havale-from" class="field__input"></select>
+              </label>
+              <label class="field">
+                <span class="field__label">Alıcı (Müşteri)</span>
+                <select id="havale-to" class="field__input"></select>
+              </label>
+              <label class="field">
+                <span class="field__label">Alıcı Hesap</span>
+                <select id="havale-to-account" class="field__input"></select>
+              </label>
+              <label class="field">
+                <span class="field__label">Tutar (₺)</span>
+                <input type="number" id="havale-amount" class="field__input" min="1" step="0.01" placeholder="0,00" required>
+              </label>
+              <label class="field">
+                <span class="field__label">Açıklama</span>
+                <input type="text" id="havale-note" class="field__input" placeholder="Örn: Kira ödemesi" maxlength="80">
+              </label>
+              <div class="amount-chips">
+                <button type="button" class="amount-chip" data-amount="100">100 ₺</button>
+                <button type="button" class="amount-chip" data-amount="250">250 ₺</button>
+                <button type="button" class="amount-chip" data-amount="500">500 ₺</button>
+                <button type="button" class="amount-chip" data-amount="1000">1.000 ₺</button>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Havale Gönder</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- HESAPLAR ARASI -->
+        <section id="view-transfer" class="view">
+          <header class="view-head">
+            <h2>Hesaplar Arası Transfer</h2>
+            <p>Kendi hesaplarınız arasında para taşıyın</p>
+          </header>
+          <form id="transfer-form" class="tx-form">
+            <div class="tx-form__card">
+              <label class="field">
+                <span class="field__label">Kaynak Hesap</span>
+                <select id="transfer-from" class="field__input"></select>
+              </label>
+              <div class="swap-row">
+                <button type="button" class="swap-btn" id="swap-accounts" aria-label="Hesapları değiştir">⇅</button>
+              </div>
+              <label class="field">
+                <span class="field__label">Hedef Hesap</span>
+                <select id="transfer-to" class="field__input"></select>
+              </label>
+              <label class="field">
+                <span class="field__label">Tutar (₺)</span>
+                <input type="number" id="transfer-amount" class="field__input" min="1" step="0.01" placeholder="0,00" required>
+              </label>
+              <button type="submit" class="btn btn--primary btn--full">Transfer Et</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- PARA ÇEK -->
+        <section id="view-withdraw" class="view">
+          <header class="view-head">
+            <h2>Para Çekme</h2>
+            <p>Hesabınızdan nakit çekin</p>
+          </header>
+          <form id="withdraw-form" class="tx-form">
+            <div class="tx-form__card">
+              <label class="field">
+                <span class="field__label">Hesap</span>
+                <select id="withdraw-account" class="field__input"></select>
+              </label>
+              <label class="field">
+                <span class="field__label">Çekilecek Tutar (₺)</span>
+                <input type="number" id="withdraw-amount" class="field__input" min="1" step="0.01" placeholder="0,00" required>
+              </label>
+              <div class="amount-chips">
+                <button type="button" class="amount-chip" data-amount="50">50 ₺</button>
+                <button type="button" class="amount-chip" data-amount="100">100 ₺</button>
+                <button type="button" class="amount-chip" data-amount="200">200 ₺</button>
+                <button type="button" class="amount-chip" data-amount="500">500 ₺</button>
+                <button type="button" class="amount-chip" data-amount="1000">1.000 ₺</button>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Para Çek</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- PARA YATIR -->
+        <section id="view-deposit" class="view">
+          <header class="view-head">
+            <h2>Para Yatırma</h2>
+            <p>Hesabınıza para yükleyin</p>
+          </header>
+          <form id="deposit-form" class="tx-form">
+            <div class="tx-form__card">
+              <label class="field">
+                <span class="field__label">Hesap</span>
+                <select id="deposit-account" class="field__input"></select>
+              </label>
+              <label class="field">
+                <span class="field__label">Yatırılacak Tutar (₺)</span>
+                <input type="number" id="deposit-amount" class="field__input" min="1" step="0.01" placeholder="0,00" required>
+              </label>
+              <div class="amount-chips">
+                <button type="button" class="amount-chip" data-amount="100">100 ₺</button>
+                <button type="button" class="amount-chip" data-amount="500">500 ₺</button>
+                <button type="button" class="amount-chip" data-amount="1000">1.000 ₺</button>
+                <button type="button" class="amount-chip" data-amount="5000">5.000 ₺</button>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Para Yatır</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- İŞLEM GEÇMİŞİ -->
+        <section id="view-history" class="view">
+          <header class="view-head">
+            <h2>İşlem Geçmişi</h2>
+            <p>Tüm hesap hareketleriniz</p>
+          </header>
+          <div class="panel">
+            <div id="history-full" class="tx-list"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast" hidden role="status"></div>
+
+  <!-- ONAY MODALI -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title" class="modal__title">İşlem Onayı</h3>
+      <p id="modal-body" class="modal__body"></p>
+      <div class="modal__actions">
+        <button type="button" class="btn btn--ghost" data-close-modal>Vazgeç</button>
+        <button type="button" class="btn btn--primary" id="modal-confirm">Onayla</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebar-overlay" hidden></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
