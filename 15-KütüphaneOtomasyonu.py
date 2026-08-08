@@ -22,26 +22,29 @@ kutuphane_veritabani={
 
     ],
     "kitaplar":[
-
-        {
-            "id":1,
-            "ad":"Yapay Zekayaya Giriş",
-            "stok":3
-        },
-        {
-            "id":2,
-            "ad":"Python ile Progralama",
-            "stok":0
-        },
-        {
-            "id":3,
-            "ad":"Hasterinden Prangalar Eskittim",
-            "stok":5
-        }
+        {"id":1,"ad":"Zamanın Kısa Tarihi","yazar":"Stephen Hawking","stok":3},
+        {"id":2,"ad":"Kozmos","yazar":"Carl Sagan","stok":4},
+        {"id":3,"ad":"Gen Bencil midir?","yazar":"Richard Dawkins","stok":2},
+        {"id":4,"ad":"Türlerin Kökeni","yazar":"Charles Darwin","stok":5},
+        {"id":5,"ad":"Sapiens","yazar":"Yuval Noah Harari","stok":6},
+        {"id":6,"ad":"Gen","yazar":"Siddhartha Mukherjee","stok":3},
+        {"id":7,"ad":"Acelecilere Astrofizik","yazar":"Neil deGrasse Tyson","stok":4},
+        {"id":8,"ad":"Zarif Evren","yazar":"Brian Greene","stok":2},
+        {"id":9,"ad":"Sessiz Bahar","yazar":"Rachel Carson","stok":1},
+        {"id":10,"ad":"Henrietta Lacks'in Ölümsüz Yaşamı","yazar":"Rebecca Skloot","stok":3},
+        {"id":11,"ad":"Hızlı ve Yavaş Düşünme","yazar":"Daniel Kahneman","stok":0},
+        {"id":12,"ad":"Karanlık Bir Dünyada Bilimin Mum Işığı","yazar":"Carl Sagan","stok":2},
+        {"id":13,"ad":"Tüfek, Mikrop ve Çelik","yazar":"Jared Diamond","stok":4},
+        {"id":14,"ad":"İkili Sarmal","yazar":"James D. Watson","stok":3},
+        {"id":15,"ad":"Neden Uyuruz?","yazar":"Matthew Walker","stok":5},
+        {"id":16,"ad":"Ağaçların Gizli Yaşamı","yazar":"Peter Wohlleben","stok":4},
+        {"id":17,"ad":"Kaos","yazar":"James Gleick","stok":0},
+        {"id":18,"ad":"Evrenin Dokusu","yazar":"Brian Greene","stok":2},
+        {"id":19,"ad":"Homo Deus","yazar":"Yuval Noah Harari","stok":3},
+        {"id":20,"ad":"Altıncı Yok Oluş","yazar":"Elizabeth Kolbert","stok":4},
     ]
 
 }
-
 def uye_giris(kullaniciAdi,sifre):
 
     for uye in kutuphane_veritabani["uyeler"]:
@@ -50,7 +53,6 @@ def uye_giris(kullaniciAdi,sifre):
 
     return None
 
-
 def kitaplari_listele():
     print("Mevcut Kitap Listesi")
     for kitap in kutuphane_veritabani["kitaplar"]:
@@ -58,8 +60,6 @@ def kitaplari_listele():
 
 
         print(f"{kitap["id"]} - {kitap["ad"]} -> {durum}")
-
-
 
 def kitap_odunc_al(uye,kitap_id):
     for kitap in kutuphane_veritabani["kitaplar"]:
@@ -77,7 +77,6 @@ def kitap_odunc_al(uye,kitap_id):
     print("Geçersiz ID")
     return False
 
-
 def aldigim_kitaplar(uye):
     print(f"Sayın {uye["ad_soyad"]} Almış Olduğunuz Kitaplar:")
     if not uye["odunc_kitaplar"]:
@@ -86,8 +85,6 @@ def aldigim_kitaplar(uye):
     else:
         for kitap in uye["odunc_kitaplar"]:
             print(f"- {kitap}")
-
-
 
 while True:
     username=input("Üye Kullanıcı Adı:").strip()

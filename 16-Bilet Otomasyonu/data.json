@@ -1,0 +1,156 @@
+{
+    "kullanicilar": [
+        {
+            "kullanici_adi": "ahmet",
+            "sifre": "123",
+            "ad_soyad": "Ahmet Yılmaz",
+            "biletlerim": [],
+            "bakiye": 1000
+        },
+        {
+            "kullanici_adi": "zeynep",
+            "sifre": "123",
+            "ad_soyad": "Zeynep Zeytin",
+            "biletlerim": [],
+            "bakiye": 10000
+        },
+        {
+            "kullanici_adi": "zeynep1",
+            "sifre": "123",
+            "ad_soyad": "Zeynep Özkan",
+            "biletlerim": [
+                "Sezen Aksu İstanbul Konseri  3 Bilet - Toplam: 2550"
+            ],
+            "bakiye": 10000
+        },
+        {
+            "kullanici_adi": "esma",
+            "sifre": "123",
+            "ad_soyad": "Esma Akbulut",
+            "biletlerim": [],
+            "bakiye": 15000
+        }
+    ],
+    "etkinlikler": [
+        {
+            "id": 101,
+            "ad": "Sezen Aksu İstanbul Konseri",
+            "fiyat": 850,
+            "kontenjan": 117
+        },
+        {
+            "id": 102,
+            "ad": "Duman Rock Gecesi",
+            "fiyat": 650,
+            "kontenjan": 100
+        },
+        {
+            "id": 103,
+            "ad": "Jazz Under the Stars",
+            "fiyat": 420,
+            "kontenjan": 80
+        },
+        {
+            "id": 104,
+            "ad": "Anadolu Rock Festivali",
+            "fiyat": 550,
+            "kontenjan": 150
+        },
+        {
+            "id": 105,
+            "ad": "Mozart Klasik Müzik Akşamı",
+            "fiyat": 380,
+            "kontenjan": 90
+        },
+        {
+            "id": 106,
+            "ad": "Elektronik Müzik Festivali",
+            "fiyat": 700,
+            "kontenjan": 200
+        },
+        {
+            "id": 107,
+            "ad": "Türkülerle Anadolu Gecesi",
+            "fiyat": 300,
+            "kontenjan": 75
+        },
+        {
+            "id": 108,
+            "ad": "Akustik Gitar Akşamı",
+            "fiyat": 250,
+            "kontenjan": 60
+        },
+        {
+            "id": 109,
+            "ad": "Blues & Soul Night",
+            "fiyat": 480,
+            "kontenjan": 70
+        },
+        {
+            "id": 110,
+            "ad": "Indie Rock Showcase",
+            "fiyat": 400,
+            "kontenjan": 85
+        },
+        {
+            "id": 111,
+            "ad": "Orhan Pamuk ile Edebiyat Söyleşisi",
+            "fiyat": 200,
+            "kontenjan": 50
+        },
+        {
+            "id": 112,
+            "ad": "Bilim ve Gelecek Söyleşisi",
+            "fiyat": 150,
+            "kontenjan": 100
+        },
+        {
+            "id": 113,
+            "ad": "Girişimcilik ve İnovasyon Paneli",
+            "fiyat": 180,
+            "kontenjan": 80
+        },
+        {
+            "id": 114,
+            "ad": "Sinema Yönetmenleriyle Söyleşi",
+            "fiyat": 220,
+            "kontenjan": 65
+        },
+        {
+            "id": 115,
+            "ad": "Psikoloji ve Mutluluk Konuşması",
+            "fiyat": 175,
+            "kontenjan": 90
+        },
+        {
+            "id": 116,
+            "ad": "Yapay Zeka ve Etik Söyleşisi",
+            "fiyat": 160,
+            "kontenjan": 110
+        },
+        {
+            "id": 117,
+            "ad": "Şairlerle Şiir Gecesi",
+            "fiyat": 120,
+            "kontenjan": 55
+        },
+        {
+            "id": 118,
+            "ad": "Tarih ve Medeniyetler Söyleşisi",
+            "fiyat": 140,
+            "kontenjan": 70
+        },
+        {
+            "id": 119,
+            "ad": "Kadın Liderler Paneli",
+            "fiyat": 190,
+            "kontenjan": 85
+        },
+        {
+            "id": 120,
+            "ad": "Müzik Prodüksiyonu Atölye Söyleşisi",
+            "fiyat": 210,
+            "kontenjan": 45
+        }
+    ]
+}
