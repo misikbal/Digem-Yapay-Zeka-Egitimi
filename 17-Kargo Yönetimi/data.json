@@ -1,0 +1,16 @@
+{
+    "kargolar":{
+        "TR101":{
+            "alici":"Ahmet Yılmaz",
+            "urun":"Kablosuz Kulaklık",
+            "durum":"Dağıtımda",
+            "agirilik_kg":0.5
+        },
+        "TR102":{
+            "alici":"Zeynep Kaya",
+            "urun":"Mekanik Klavye",
+            "durum":"Teslim Edildi",
+            "agirilik_kg":1.2
+        }
+    }
+}

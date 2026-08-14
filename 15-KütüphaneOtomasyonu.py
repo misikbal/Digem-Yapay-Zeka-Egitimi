@@ -22,7 +22,7 @@ kutuphane_veritabani={
 
     ],
     "kitaplar":[
-        {"id":1,"ad":"Zamanın Kısa Tarihi","yazar":"Stephen Hawking","stok":3},
+17        {"id":1,"ad":"Zamanın Kısa Tarihi","yazar":"Stephen Hawking","stok":3},
         {"id":2,"ad":"Kozmos","yazar":"Carl Sagan","stok":4},
         {"id":3,"ad":"Gen Bencil midir?","yazar":"Richard Dawkins","stok":2},
         {"id":4,"ad":"Türlerin Kökeni","yazar":"Charles Darwin","stok":5},
