@@ -1,16 +1,25 @@
 {
-    "kargolar":{
-        "TR101":{
-            "alici":"Ahmet Yılmaz",
-            "urun":"Kablosuz Kulaklık",
-            "durum":"Dağıtımda",
-            "agirilik_kg":0.5
+    "kargolar": {
+        "TR101": {
+            "alici": "Ahmet Yılmaz",
+            "urun": "Kablosuz Kulaklık",
+            "durum": "Dağıtımda",
+            "agirilik_kg": 0.5,
+            "mail": "ahmet.yilmaz@ornek.com"
         },
-        "TR102":{
-            "alici":"Zeynep Kaya",
-            "urun":"Mekanik Klavye",
-            "durum":"Teslim Edildi",
-            "agirilik_kg":1.2
+        "TR102": {
+            "alici": "Zeynep Kaya",
+            "urun": "Mekanik Klavye",
+            "durum": "Teslim Edildi",
+            "agirilik_kg": 1.2,
+            "mail": "zeynep.kaya@ornek.com"
+        },
+        "TR107": {
+            "alici": "Muhammed SIRDAŞ",
+            "urun": "Bilgisayar",
+            "durum": "İade Edildi",
+            "agirilik_kg": 2.0,
+            "mail": "ikbal.sirdas@gmail.com"
         }
     }
 }
