@@ -54,7 +54,7 @@ def ornek_1_tablo_olustur():
 
 
 # ---------------------------------------------------------
-# ORNEK 2: Veri ekleme (INSERT)
+# ORNEK 2: Veri ekleme (INSERT) CREATE
 # ---------------------------------------------------------
 def ornek_2_veri_ekle():
     ayirici("ORNEK 2 - Veri Ekleme")
@@ -91,7 +91,6 @@ def ornek_3_veri_oku():
     # Tum ogrencileri getir
     cursor.execute("SELECT id, ad, sinif, not_ortalamasi FROM ogrenciler")
     tum_kayitlar = cursor.fetchall()
-
     print("Tum ogrenciler:")
     for kayit in tum_kayitlar:
         print(f"  ID:{kayit[0]} | {kayit[1]} | Sinif:{kayit[2]} | Not:{kayit[3]}")
@@ -147,6 +146,7 @@ def ornek_5_veri_sil():
     conn.commit()
 
     cursor.execute("SELECT COUNT(*) FROM ogrenciler")
+
     kalan = cursor.fetchone()[0]
     print(f"Mehmet silindi. Kalan ogrenci sayisi: {kalan}")
 
